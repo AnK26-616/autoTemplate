@@ -15,7 +15,7 @@ The script works only for the frontmatters written in YAML. It does not changes 
 Script is easily configurable with the predefined _config_ object.
 
 - [Installation](Installation.md)
-- [Using script]('Using script.md')
+- [Using script](Using%20script.md)
 ## Version history
 
 	1.0 - initial version
