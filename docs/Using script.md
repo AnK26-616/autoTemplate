@@ -21,7 +21,7 @@ Lets assume you have already your note written and structured. All you need is t
 In order to do so it is enough to place this piece of script:
 
 ```js
-  <%*
+	<%*
 		let myTemplate = new tp.user.autoTemplate(tp);
 		tR = await myTemplate.apply();
 	-%>
@@ -33,7 +33,7 @@ between frontmatter and the body of your note (including title, if exists), like
 ---
 category: memo
 ---
-  <%*
+	<%*
 		let myTemplate = new tp.user.autoTemplate(tp);
 		tR = await myTemplate.apply();
 	-%>
@@ -56,7 +56,7 @@ but it has to exist in order to make the _autoTemplate_ work.
 Using the same approach as above, insert this piece of script:
 
 ```js
-  <%*
+	<%*
 		let myTemplate = new tp.user.autoTemplate(tp);
 		tR = await myTemplate.apply();
 	-%>
@@ -71,7 +71,7 @@ Due to the way _Templater_ plugin handles target note content (with _tR_ variabl
 In this mode of operation you need to create a dedicated template to define / handle the triggers. This template may be defined like this:
 
 ```js
-  <%*
+	<%*
 		let myTemplate = new tp.user.autoTemplate(tp);
 		myTemplate.addTrigger("refb","Book","template-Book")
 		myTemplate.addTrigger("ntb","","note-Basic")
@@ -234,7 +234,7 @@ Defines the main rule to follow when renaming the note file. This string represe
 		myTemplate.config.unid.type = "datetime"; 
 		myTemplate.config.unid.format = "YYYYMMDDHHmm"; 
 		myTemplate.config.unid.separator = "@"; 
-	  %>
+	%>
 ```
 
 Defines universal note ID (unid) for given note following _Zettelkasten_ idea. Currently only the IDs of "datetime" type are supported. They are not truly randomized by created based on the actual date and time stamp. 
@@ -253,7 +253,7 @@ The 'separator' property gives you an ability to define the separator which will
 		myTemplate.config.frontmatter.title = true;
 		myTemplate.config.frontmatter.datetag = true;
 		myTemplate.config.frontmatter.template = true;
-	  %>
+	%>
 ```
 
 Each of the properties defined above allow to decide if given part of frontmatter should be updated or created in case it does not exist (if the value is 'true') or not (if 'false'). The meaning of the particular parts is the following:
@@ -273,7 +273,7 @@ Note: 'alias' and 'datetag' properties work differently based on what they find 
 	<%* 
 		myTemplate.config.template.trigger = "="; 
 		myTemplate.config.template.separator = "-"; 
-	  %>
+	%>
 ```
 
 Allows you to specify actually two types of template related separators. The 'trigger' one is used when creating the note directly from another note. More on using triggered templates in the 'Using' section.
@@ -285,7 +285,7 @@ The 'separator' one is used to separate the note type / template / extension not
 ```js
 	<%* 
 		myTemplate.config.addTrigger(prefix, description, file); 
-	  %>
+	%>
 ```
 
 Add new trigger template. Each trigger template consist of following:
@@ -299,7 +299,7 @@ Example:
 ```js
 	<%* 
 		myTemplate.config.addTrigger("ntb", "Basic Note", "note-Basic"); 
-	  %>
+	%>
 ```
 
 In the example above, when using ```[[ntb=My new note]]``` to trigger new note creation, the new note will be created, renamed to **Basic Note - My new note @ 202301010910** and the 'note-Basic' template will be applied automatically to it.
