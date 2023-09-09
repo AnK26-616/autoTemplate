@@ -22,4 +22,4 @@ Script is easily configurable with the predefined _config_ object.
 
 ## Licensing
 
-This piece of software is released under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/).
+This piece of software is released under [MPL 2.0](./LICENCE.md).
