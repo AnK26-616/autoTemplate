@@ -131,13 +131,11 @@ module.exports = class autoTemplateClass {
 
         switch(this.config.unid.type){
             case "datetime":
-                if(this.#templater.frontmatter.created==undefined || (this.#templater.frontmatter.created) != "object"){
+                if(this.#templater.frontmatter.created==undefined){// || (this.#templater.frontmatter.created) != "object"){
                     titleI = this.#templater.date.now(this.config.unid.format);
                 }else{
                     let rH =(Math.floor(Math.random()*24)).toString();
                     let rM= (Math.floor(Math.random()*60)).toString();
-
-                    console.log(typeof this.#templater.frontmatter.created);
        
                     titleI = this.#templater.frontmatter.created.substring(0,4) + this.#templater.frontmatter.created.substring(5,7) + this.#templater.frontmatter.created.substring(8,10) + (rH.length==1?"0":"") + rH + (rM.length==1?"0":"") + rM;
                 }
